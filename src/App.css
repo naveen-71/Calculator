@@ -1,38 +1,134 @@
-.App {
-  text-align: center;
+/* Global Styles */
+body {
+  background-color: #ececec; /* A lighter background for contrast */
+  font-family: 'Poppins', sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Calculator Container */
+.calculator {
+  background-color: #f4f4f4; /* Softer gray */
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  padding: 20px;
+  border-radius: 20px;
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2); /* Add a nice shadow for depth */
+  width: 100%;
+  max-width: 350px; /* Limit width for larger screens */
+}
+
+/* Display Styles */
+.display {
+  background: linear-gradient(135deg, #000000, #434343); /* Add gradient for a sleek look */
+  color: #00ffcc; /* Neon-like text color */
+  font-size: 2.5rem;
+  padding: 20px;
+  width: 100%;
+  text-align: right;
+  border-radius: 10px;
+  box-shadow: inset 0 4px 8px rgba(0, 0, 0, 0.4); /* Inset shadow for depth */
+  margin-bottom: 20px;
+}
+
+/* Buttons Container */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* Responsive grid */
+  grid-gap: 10px;
+  width: 100%;
+}
+
+/* Button Styles */
+button {
+  background-color: #ffffff;
+  font-size: 1.5rem;
+  padding: 20px;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15); /* Subtle shadow for floating effect */
+}
+
+button:hover {
+  background-color: #e6e6e6;
+  transform: translateY(-3px); /* Adds slight hover lift effect */
+}
+
+button:active {
+  background-color: #ccc;
+  transform: translateY(1px); /* Button press effect */
+}
+
+/* Special Buttons */
+button:nth-child(4n) {
+  background-color: #ffa600; /* Different color for operators */
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+button:nth-child(4n):hover {
+  background-color: #ff8500;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+button:nth-child(4n):active {
+  background-color: #cc6b00;
+}
+
+/* Clear and Equals Button */
+button:nth-child(1),
+button:nth-child(19) {
+  background-color: #ff5757;
+  color: white;
+}
+
+button:nth-child(1):hover,
+button:nth-child(19):hover {
+  background-color: #ff3c3c;
+}
+
+button:nth-child(1):active,
+button:nth-child(19):active {
+  background-color: #e53939;
+}
+
+/* Responsive Design */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 15px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .display {
+    font-size: 2rem;
+    padding: 15px;
   }
+  
+  button {
+    padding: 15px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .calculator {
+    padding: 10px;
+  }
+  
+  .display {
+    font-size: 1.8rem;
+    padding: 10px;
+  }
+  
+  button {
+    padding: 10px;
+    font-size: 1rem;
+  }
+}
+h1{
+  text-align: center;
+  color: #ffaa00;
 }
